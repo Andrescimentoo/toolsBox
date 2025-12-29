@@ -1,0 +1,38 @@
+// Prisma schema para o projeto Caixa de Ferramentas
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+/// Enum para linguagens suportadas
+enum Language {
+  JS
+  TS
+  Python
+  IA
+}
+
+/// Enum para áreas (Front‑end ou Back‑end)
+enum Area {
+  FRONT
+  BACK
+}
+
+/// Modelo principal que representa uma ferramenta cadastrada pelo usuário
+model Tool {
+  id           Int      @id @default(autoincrement())
+  image        String
+  name         String
+  funcao       String
+  descricao    String
+  documentacao String
+  anotacoes    String?
+  linguagem    Language
+  area         Area
+  createdAt    DateTime @default(now())
+}
