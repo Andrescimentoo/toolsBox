@@ -1,0 +1,28 @@
+.tool-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.tool-card-image {
+    max-width: 100px;
+    margin-bottom: 0.5rem;
+}
+
+.tool-card h3 {
+    margin-top: 0;
+}
+
+.tool-card p {
+    margin: 0.5rem 0;
+}
+
+.tool-card-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.tool-card-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+.home-page {
+    padding: 2rem;
+}
+
+.home-page h1 {
+    margin-top: 0;
+}
+
+.languages-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ToolForm.css';
 
 /**
  * Formulário para criação de uma nova ferramenta. Recebe a linguagem e área
@@ -14,7 +15,7 @@ function ToolForm({ language, area, onSubmit, onCancel }) {
     anotacoes: '',
     linguagem: language,
     area: area,
- 
+
   });
 
   const handleChange = (e) => {
@@ -29,14 +30,7 @@ function ToolForm({ language, area, onSubmit, onCancel }) {
   };
 
   return (
-    <div
-      style={{
-        marginTop: '1rem',
-        padding: '1rem',
-        border: '1px solid #ccc',
-        borderRadius: '0.5rem',
-      }}
-    >
+    <div className="tool-form-container">
       <h2>Registrar nova ferramenta</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -45,7 +39,7 @@ function ToolForm({ language, area, onSubmit, onCancel }) {
           placeholder="URL da imagem"
           value={formData.image}
           onChange={handleChange}
-          style={{ display: 'block', width: '100%', marginBottom: '0.5rem' }}
+          className="tool-form-input"
         />
         <input
           type="text"
@@ -53,7 +47,7 @@ function ToolForm({ language, area, onSubmit, onCancel }) {
           placeholder="Nome da ferramenta"
           value={formData.name}
           onChange={handleChange}
-          style={{ display: 'block', width: '100%', marginBottom: '0.5rem' }}
+          className="tool-form-input"
         />
         <input
           type="text"
@@ -61,14 +55,14 @@ function ToolForm({ language, area, onSubmit, onCancel }) {
           placeholder="Função da ferramenta"
           value={formData.funcao}
           onChange={handleChange}
-          style={{ display: 'block', width: '100%', marginBottom: '0.5rem' }}
+          className="tool-form-input"
         />
         <textarea
           name="descricao"
           placeholder="Descrição"
           value={formData.descricao}
           onChange={handleChange}
-          style={{ display: 'block', width: '100%', marginBottom: '0.5rem' }}
+          className="tool-form-textarea"
         />
         <input
           type="text"
@@ -76,19 +70,19 @@ function ToolForm({ language, area, onSubmit, onCancel }) {
           placeholder="Link da documentação"
           value={formData.documentacao}
           onChange={handleChange}
-          style={{ display: 'block', width: '100%', marginBottom: '0.5rem' }}
+          className="tool-form-input"
         />
         <textarea
           name="anotacoes"
           placeholder="O que mais você quer acrescentar? Que problemas resolveu?"
           value={formData.anotacoes}
           onChange={handleChange}
-          style={{ display: 'block', width: '100%', marginBottom: '0.5rem' }}
+          className="tool-form-textarea"
         />
-        <button type="submit" style={{ marginRight: '0.5rem' }}>
+        <button type="submit" className="tool-form-submit-btn">
           Registrar nova ferramenta
         </button>
-        <button type="button" onClick={onCancel}>
+        <button type="button" onClick={onCancel} className="tool-form-cancel-btn">
           Cancelar
         </button>
       </form>

@@ -1,0 +1,27 @@
+.area-page {
+    padding: 2rem;
+}
+
+.area-page h1 {
+    margin-top: 0;
+}
+
+.add-tool-btn {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+}
+
+.add-tool-btn:hover {
+    background-color: #0056b3;
+}
+
+.tools-list {
+    margin-top: 1rem;
+}

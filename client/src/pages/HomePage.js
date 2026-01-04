@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import LanguageCard from '../components/LanguageCard';
+import './HomePage.css';
 
 // Lista de linguagens suportadas (com ícones simbólicos)
 const languages = [
@@ -17,10 +18,10 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div className="home-page">
       <h1>Caixa de Ferramentas</h1>
       <p>Escolha uma linguagem para acessar a caixa correspondente:</p>
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <div className="languages-grid">
         {languages.map((lang) => (
           <LanguageCard
             key={lang.id}

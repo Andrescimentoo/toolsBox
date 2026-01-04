@@ -1,4 +1,5 @@
 import React from 'react';
+import './ToolCard.css';
 
 /**
  * Componente que exibe os detalhes de uma ferramenta cadastrada.
@@ -6,19 +7,12 @@ import React from 'react';
  */
 function ToolCard({ tool }) {
   return (
-    <div
-      style={{
-        border: '1px solid #ddd',
-        padding: '1rem',
-        marginBottom: '1rem',
-        borderRadius: '0.5rem',
-      }}
-    >
+    <div className="tool-card">
       {tool.image && (
         <img
           src={tool.image}
           alt={tool.name}
-          style={{ maxWidth: '100px', marginBottom: '0.5rem' }}
+          className="tool-card-image"
         />
       )}
       <h3>{tool.name}</h3>
@@ -34,6 +28,7 @@ function ToolCard({ tool }) {
           href={tool.documentacao}
           target="_blank"
           rel="noopener noreferrer"
+          className="tool-card-link"
         >
           {tool.documentacao}
         </a>

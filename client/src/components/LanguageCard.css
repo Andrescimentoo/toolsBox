@@ -1,0 +1,22 @@
+.language-card {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    min-width: 120px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.language-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-card-icon {
+    font-size: 2rem;
+}
+
+.language-card-name {
+    margin-top: 0.5rem;
+}
