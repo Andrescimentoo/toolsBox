@@ -5,8 +5,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 /// Enum para linguagens suportadas
@@ -23,14 +23,14 @@ enum Area {
   BACK
 }
 
-/// Modelo principal que representa uma ferramenta cadastrada pelo usuário
+
 model Tool {
   id           Int      @id @default(autoincrement())
-  image        String
+  image        String // não é string 
   name         String
   funcao       String
   descricao    String
-  documentacao String
+  documentacao String //é URL
   anotacoes    String?
   linguagem    Language
   area         Area
