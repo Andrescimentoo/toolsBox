@@ -1,7 +1,4 @@
-import { PrismaClient } from '@prisma/client';
-
-// Instância única do Prisma Client
-const prisma = new PrismaClient();
+import { prisma } from "../../prisma/prismaClient.js";
 
 // Controlador para listar ferramentas
 export const getTools = async (req, res) => {
@@ -13,6 +10,15 @@ export const getTools = async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch tools' });
   }
 };
+
+
+
+
+
+
+
+
+
 
 // Controlador para criar uma nova ferramenta
 export const createTool = async (req, res) => {
@@ -36,6 +42,30 @@ export const createTool = async (req, res) => {
     res.status(500).json({ error: 'Failed to create tool' });
   }
 };
+
+// cuidaos a se tomar c esse tool
+
+// lembra que vamos guardar na dataBase dados de diferentes tipos , então pra cada campo
+// é crucial especificar o tipo de dado q vamos guardar e requsitar.
+
+//ex:img: é uma IMAGEM;
+// documentacao: é uma URL
+// o resto são strings
+
+// além de adicionar verificação obrigatória: Todos os campos devem ser preenchidos
+
+//isso tudo se configura no SGB , ou manualmente ou via ORM 
+
+
+
+
+
+
+
+
+
+
+
 
 // Controlador para atualizar uma ferramenta
 export const updateTool = async (req, res) => {
@@ -61,6 +91,14 @@ export const updateTool = async (req, res) => {
     res.status(500).json({ error: 'Failed to update tool' });
   }
 };
+
+
+
+
+
+
+
+
 
 // Controlador para deletar uma ferramenta
 export const deleteTool = async (req, res) => {
