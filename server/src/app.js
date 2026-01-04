@@ -16,10 +16,10 @@ app.get('/', (req, res) => {
   res.send('Caixa de Ferramentas API');
 });
 
-// Rotas da API
+
 app.use('/api/tools', toolRoutes);
 
-// Inicializa servidor
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
