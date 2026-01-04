@@ -23,6 +23,7 @@ function LanguagePage() {
     <div style={{ padding: '2rem' }}>
       <h1>Bem‑vindo à caixa de ferramentas {currentLanguage}</h1>
       <p>Escolha abaixo qual parte da caixa de ferramentas você quer acessar.</p>
+      
       <div style={{ display: 'flex', gap: '1rem' }}>
         {/* Componente de navegação para Front‑end */}
         <div
