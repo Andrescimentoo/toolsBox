@@ -2,6 +2,7 @@ import React from 'react';
 
 /**
  * Componente que exibe os detalhes de uma ferramenta cadastrada.
+ * Tool é a tabela em questão (ex: language: js area: back-end)
  */
 function ToolCard({ tool }) {
   return (
