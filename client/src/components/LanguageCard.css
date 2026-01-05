@@ -1,22 +1,257 @@
 .language-card {
     cursor: pointer;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    min-width: 120px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    background: #000;
+    border: 3px solid #ff0000;
+    border-radius: 0.25rem;
+    width: 220px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4), inset 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.language-card-overlay {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.language-card:hover .language-card-overlay {
+    background: rgba(226, 18, 18, 0.15);
 }
 
 .language-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #ff3333;
+    z-index: 20;
 }
 
 .language-card-icon {
-    font-size: 2rem;
+    font-size: 4.5rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.language-card:hover .language-card-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .language-card-name {
-    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e21212;
+    text-shadow: 1px 1px 2px #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 10px;
+}
+
+.language-card:hover .language-card-name {
+    color: #fff;
+    text-shadow: 0 0 10px #e21212, 0 0 20px #e21212;
+}
+
+/* --- ATRIBUIÇÃO DE ANIMAÇÕES ALTERNADAS --- */
+
+.languages-grid> :nth-child(1) .language-card {
+    animation: cardEntrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both,
+        cardFlickerA 4s infinite,
+        cardThunderA 5s infinite,
+        cardThrob 3s ease-in-out infinite alternate;
+}
+
+.languages-grid> :nth-child(2) .language-card {
+    animation: cardEntrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both,
+        cardFlickerB 3.5s infinite 0.5s,
+        cardThunderB 6s infinite 1.2s,
+        cardThrob 3.2s ease-in-out infinite alternate;
+}
+
+.languages-grid> :nth-child(3) .language-card {
+    animation: cardEntrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both,
+        cardFlickerC 4.5s infinite 0.2s,
+        cardThunderC 4.8s infinite 0.8s,
+        cardThrob 2.8s ease-in-out infinite alternate;
+}
+
+.languages-grid> :nth-child(4) .language-card {
+    animation: cardEntrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both,
+        cardFlickerD 3.8s infinite 0.3s,
+        cardThunderA 5.5s infinite 1.5s,
+        cardThrob 3.5s ease-in-out infinite alternate;
+}
+
+/* No hover, o latejar (throb) fica mais rápido em todos */
+.languages-grid .language-card:hover {
+    animation-name: none;
+    /* Reseta para aplicar a nova combinação */
+    animation: cardFlickerA 2s infinite, cardThrob 0.5s ease-in-out infinite alternate !important;
+}
+
+/* --- KEYFRAMES --- */
+
+@keyframes cardFlickerA {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        border-color: #ff0000;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        border-color: #220000;
+        box-shadow: none;
+        opacity: 0.6;
+    }
+}
+
+@keyframes cardFlickerB {
+
+    0%,
+    12%,
+    17%,
+    45%,
+    50%,
+    85%,
+    100% {
+        border-color: #ff0000;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        opacity: 1;
+    }
+
+    14%,
+    47%,
+    88% {
+        border-color: #220000;
+        box-shadow: none;
+        opacity: 0.5;
+    }
+}
+
+@keyframes cardFlickerC {
+
+    0%,
+    25%,
+    30%,
+    70%,
+    75%,
+    100% {
+        border-color: #ff0000;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        opacity: 1;
+    }
+
+    27%,
+    72% {
+        border-color: #220000;
+        box-shadow: none;
+        opacity: 0.6;
+    }
+}
+
+@keyframes cardFlickerD {
+
+    0%,
+    8%,
+    12%,
+    60%,
+    65%,
+    100% {
+        border-color: #ff0000;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        opacity: 1;
+    }
+
+    10%,
+    62% {
+        border-color: #220000;
+        box-shadow: none;
+        opacity: 0.4;
+    }
+}
+
+@keyframes cardThunderA {
+
+    0%,
+    94%,
+    98%,
+    100% {
+        border-color: #ff0000;
+    }
+
+    95%,
+    97% {
+        border-color: #fff;
+        box-shadow: 0 0 40px #ff0000, 0 0 80px #ff0000;
+    }
+}
+
+@keyframes cardThunderB {
+
+    0%,
+    80%,
+    85%,
+    100% {
+        border-color: #ff0000;
+    }
+
+    82%,
+    84% {
+        border-color: #fff;
+        box-shadow: 0 0 50px #ff0000;
+    }
+}
+
+@keyframes cardThunderC {
+
+    0%,
+    40%,
+    45%,
+    100% {
+        border-color: #ff0000;
+    }
+
+    42%,
+    44% {
+        border-color: #fff;
+        box-shadow: 0 0 60px #ff0000;
+    }
+}
+
+@keyframes cardThrob {
+    from {
+        transform: scale(1.06);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }

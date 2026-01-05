@@ -2,13 +2,17 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import LanguageCard from '../components/LanguageCard';
 import './HomePage.css';
+import imgJs from '../assets/imgJsBackGroundCardTools.jpeg';
+import imgTs from '../assets/imgTs.jpeg';
+import imgPy from '../assets/imgPyBackGroundCardTools.jpeg';
+import imgAI from '../assets/imgAI.jpeg';
 
 // Lista de linguagens suportadas (com ícones simbólicos)
 const languages = [
-  { id: 'JS', name: 'JavaScript', icon: '🟨' },
-  { id: 'TS', name: 'TypeScript', icon: '🟦' },
-  { id: 'Python', name: 'Python', icon: '🐍' },
-  { id: 'IA', name: 'IA', icon: '🤖' },
+  { id: 'JS', name: 'JavaScript', icon: '', image: imgJs },
+  { id: 'TS', name: 'TypeScript', icon: '', image: imgTs },
+  { id: 'Python', name: 'Python', icon: '', image: imgPy },
+  { id: 'IA', name: 'IA', icon: '', image: imgAI },
 ];
 
 /**
@@ -19,14 +23,21 @@ function HomePage() {
 
   return (
     <div className="home-page">
+      {/* Elementos do Mundo Invertido */}
+      <div className="upside-down-effects">
+        {[...Array(50)].map((_, i) => (
+          <div key={i} className="spore"></div>
+        ))}
+      </div>
+
       <h1>Caixa de Ferramentas</h1>
       <p>Escolha uma linguagem para acessar a caixa correspondente:</p>
       <div className="languages-grid">
         {languages.map((lang) => (
           <LanguageCard
             key={lang.id}
-            name={lang.name}
             icon={lang.icon}
+            image={lang.image}
             onClick={() => navigate(`/${lang.id}`)}
           />
         ))}

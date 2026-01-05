@@ -5,6 +5,17 @@ import './ToolCard.css';
  * Componente que exibe os detalhes de uma ferramenta cadastrada.
  * Tool é a tabela em questão (ex: language: js area: back-end)
  */
+
+
+
+function deleteTool() {
+    
+}
+
+function updateTool() {
+    
+}
+
 function ToolCard({ tool }) {
   return (
     <div className="tool-card">
@@ -38,7 +49,11 @@ function ToolCard({ tool }) {
           <strong>Anotações:</strong> {tool.anotacoes}
         </p>
       )}
-    </div>
+      
+      <button>Editar</button> 
+      
+      <button>Remover</button>
+    </div>  
   );
 }
 

@@ -6,7 +6,7 @@ import './AreaPage.css';
 
 function AreaPage() {
   const { language, area } = useParams(); // language e area São Os enuns (ddaos que definimos com unicos Unique key?) 
-  const [tools, setTools] = useState([]); // tools é um estado. Estado de que? 
+  const [tools, setTools] = useState([]); // tools é uma tabela que quando os dados forem filtrados, serão armazenados aqui   
   const [showForm, setShowForm] = useState(false); // show form é um estado; Estado de que? 
 
   const fetchTools = async () => { // é o processo final (de quando a geente aperta no botão registrar, o form some e são renderizados os novos dados )
